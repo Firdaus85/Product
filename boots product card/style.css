@@ -1,0 +1,392 @@
+:root{
+    --primary:#1b1b1d;
+    
+
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+body{
+    background-color: #efefef;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 860px;
+}
+.bootBackground{
+    position: relative;
+    width: 50%;
+    height: 475px;
+    box-shadow: -15px 0 35px rgba(0, 0,0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.gradients{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.gradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+.first{
+    z-index: 0;
+    animation: 1s width ease;
+}
+@keyframes width{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+
+}
+.second{
+    z-index: -1;
+}
+.gradient[color="Black"]{
+    background-image: linear-gradient(45deg, #29282a, #17181a);
+   
+}
+.gradient[color="red"]{
+    background-image: linear-gradient(45deg, #c82533, #fd5950);
+    ;
+}
+.gradient[color="green"]{
+    background-image: linear-gradient(45deg, #b9e512, #eefc62);
+}
+.gradient[color="ash"]{
+    background-image: linear-gradient(45deg, #7b858c, #6b6b6d);
+}
+.logo{
+    position: absolute;
+    width: 100px;
+    left: 5px;
+    top: 1px;
+}
+.share{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size:1.3rem ;
+    text-decoration: none;
+    color: var(--primary);
+    transition: .5s;
+}
+.share:hover{
+    transform: scale(1.1);
+}
+.share i{
+    line-height: 50px;
+}
+.nike{
+    position: absolute;
+    top: 75px;
+    left:10px;
+    font-size: 11rem;
+    text-transform: uppercase;
+    line-height: .9;
+    color: #fff;
+    opacity: .1;
+}
+.boot{
+    position: absolute;
+    width: 130%;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    top: 1px;
+    transform: rotate(-20deg);
+}
+.boot.show{
+    opacity: 1;
+}
+
+.info{
+    width: 50%;
+    background-color: #fff;
+    padding: 35px 40px;
+    box-shadow: -15px 0 35px rgba(0, 0,0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+    
+}
+.bootName{
+    padding: 0 0 10px 0;
+}
+.bootName div{
+    display: flex;
+    align-items: center;
+}
+.bootName div .big{
+    margin-right: 10px;
+    font-size: 2rem;
+    color: #333;
+    line-height: 1;
+}
+.bootName div .new{
+    background-color: var(--primary);
+    text-transform: uppercase;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.bootName .small{
+    font-weight: 500;
+    color: #444;
+    margin-top: 3px;
+    text-transform: capitalize;
+}
+.bootName, .description, .color-container, .size-container{
+    border-bottom: 1px solid #dadada;
+}
+.description{
+    padding: 10px 0;
+}
+.title{
+    color: #3a3a3a;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.text{
+    color: #555;
+    font-size: 17px;
+}
+.color-container{
+    padding: 10px 0;
+}
+.colors{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+.color{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 5px solid;
+    cursor: pointer;
+    transition: .5s;
+    
+}
+.color[color="Black"]{
+    background-color: #303031;
+    border-color: #303031;
+}
+.color[color="green"]{
+    background-color: #b3d508;
+    border-color: #b3d508;
+}
+.color[color="red"]{
+    background-color: #d12c3c;
+    border-color: #d12c3c;
+}
+.color[color="ash"]{
+    background-color: #708788;
+    border-color: #708788;
+}
+.color.active{
+    border-color: #fff;
+    box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0);
+    transform: scale(1.1);
+}
+.size-container{
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.sizes{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+.size{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #eeee;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+.size.active{
+    background-color: var(--primary);
+    color: #fff;
+}
+.buy-price{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price{
+    color: #333;
+    display: flex;
+    align-items: 1;
+}
+.price h1{
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+}
+.price i{
+    font-size: 1.4rem;
+    margin-right: 1px;
+}
+.buy{
+    padding: .7rem 1rem;
+    background-color: var(--primary);
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: .5s;
+}
+
+@media (max-width:1070px){
+    .boot{
+        width: 90%;
+    }
+}
+
+@media (max-width:1000px){
+    .card{
+         flex-direction:column ;
+         width: 100%;
+         box-shadow: 0 0 35px 1px rgba(0, 0,0, 0.2);
+    }
+    .card> div{
+        width: 70%;
+        box-shadow: none;
+    }
+    .boot{
+        width: 95%;
+        top: 5%;
+        right: 5%;
+    }
+    .nike{
+        top: 20%;
+        left: 5%;
+    }
+} 
+
+@media(max-width:600px){
+    .share{
+        width: 40px;
+        height: 40px;
+    }
+    .share i {
+        font-size: 1rem;
+        line-height: 40px;
+    }
+    .logo{
+        width: 70px;
+    }
+}
+@media(max-width:490px){
+    .nike{
+        font-size: 7rem;
+    }
+    .bootName div .big{
+        font-size: 1.3rem;
+    }
+    .small{
+        font-size: .9rem;
+    }
+    .new{
+        padding: 2px 6px;
+        font-size: .9rem;
+    }
+    .title{
+        font-size:.9rem ;
+    }
+    .text{
+        font-size: .8rem;
+    }
+    .buy{
+        padding: .5rem .8rem;
+        font-size: .8rem;
+    }
+    .price h1{
+        font-size: 1.5rem;
+    }
+    .price i{
+        font-size: .9rem;
+    }
+    .size{
+        width: 30px;
+        height: 30px;
+        margin: 0 8px;
+        font-size: .9rem;
+        line-height: 30px;
+    }
+    .color{
+        margin: 0 6px;
+        width: 0 20px;
+        margin: 0 20px;
+        height: 20px;
+        border-width: 4px;
+    }
+    .share{
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+    .share i{
+        font-size: .8rem;
+        line-height: 35px;
+    }
+    .logo{
+        width: 60px;
+        top: 10px;
+        left: 10px;
+    }
+    .info{
+        padding: 20px;
+    }
+}
+@media(max-width:400px){
+    .buy i{
+        display: none;
+    }
+    .container{
+        padding: 20px;
+    }
+}
